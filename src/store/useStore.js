@@ -6,6 +6,11 @@ export const useStore = create((set) => ({
   isLoggedIn: false,
   bootOS: () => set({ isBooted: true }),
   loginUser: () => set({ isLoggedIn: true }),
+  logoutUser: () => set({ isLoggedIn: false, isStartMenuOpen: false, windows: [], activeWindowId: null }),
+  turnOffOS: () => set({ isBooted: false, isLoggedIn: false, isStartMenuOpen: false, windows: [], activeWindowId: null }),
+  // Wallpaper State
+  currentWallpaper: { id: 'bliss', name: 'Bliss (Default XP)', url: '/assets/bliss.jpg', bgColor: '#3a6ea5' },
+  setWallpaper: (wp) => set({ currentWallpaper: wp }),
 
   // Start Menu
   isStartMenuOpen: false,
@@ -18,14 +23,14 @@ export const useStore = create((set) => ({
   highestZIndex: 10,
 
   openWindow: (appData) => set((state) => {
-    // Check if window is already open
+    const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
     const existingWindow = state.windows.find(w => w.id === appData.id);
     const newZIndex = state.highestZIndex + 1;
     
     if (existingWindow) {
       return {
         windows: state.windows.map(w => 
-          w.id === appData.id ? { ...w, isMinimized: false, zIndex: newZIndex } : w
+          w.id === appData.id ? { ...w, isMinimized: false, isMaximized: isMobile ? true : w.isMaximized, zIndex: newZIndex } : w
         ),
         activeWindowId: appData.id,
         highestZIndex: newZIndex,
@@ -33,12 +38,12 @@ export const useStore = create((set) => ({
       };
     }
 
-    // Open new window
+    // Open new window (auto-maximize on mobile screens)
     return {
       windows: [...state.windows, { 
         ...appData, 
         isMinimized: false, 
-        isMaximized: false, 
+        isMaximized: isMobile ? true : false, 
         zIndex: newZIndex 
       }],
       activeWindowId: appData.id,

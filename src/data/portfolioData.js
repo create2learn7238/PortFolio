@@ -199,6 +199,37 @@ export const PROJECTS_DATA = [
 ];
 
 export const CERTIFICATES_DATA = [
+  // ═══ GOOGLE CERTIFICATES (TOP) ═══
+  {
+    id: "cert-12",
+    title: "Introduction to Image Generation",
+    issuer: "Google",
+    file: "/certificates/2348201_Introduction_to_Image_Generation_6873508.pdf",
+    verificationLink: "#"
+  },
+  {
+    id: "cert-13",
+    title: "Introduction to Responsible AI",
+    issuer: "Google",
+    file: "/certificates/2348201_Introduction_to_Responsible_AI_6873533.pdf",
+    verificationLink: "#"
+  },
+
+  // ═══ AI / MACHINE LEARNING CERTIFICATES ═══
+  {
+    id: "cert-11",
+    title: "Introduction to Artificial Intelligence",
+    issuer: "Simplilearn",
+    file: "/certificates/2348201_Introduction_to_Artificial_Intelligence_6848467.pdf",
+    verificationLink: "#"
+  },
+  {
+    id: "cert-15",
+    title: "Clapingo AI Webinar",
+    issuer: "Clapingo",
+    file: "/certificates/13C83694_certificate.pdf",
+    verificationLink: "https://clapingo.com/verify-certificate/13C83694"
+  },
   {
     id: "cert-1",
     title: "Exploratory Data Analysis for Machine Learning",
@@ -206,6 +237,15 @@ export const CERTIFICATES_DATA = [
     file: "/certificates/Coursera 100L78I1LM8R Exploratory Data Analysis for Machine Learning.pdf",
     verificationLink: "https://coursera.org/verify/100L78I1LM8R"
   },
+  {
+    id: "cert-6",
+    title: "Python and Machine Learning",
+    issuer: "GreatLearning",
+    file: "/certificates/Greatlearning Python and Machine Learning.pdf",
+    verificationLink: "#"
+  },
+
+  // ═══ ALL OTHER CERTIFICATES ═══
   {
     id: "cert-2",
     title: "Inheritance and Data Structures in Java",
@@ -228,17 +268,31 @@ export const CERTIFICATES_DATA = [
     verificationLink: "https://coursera.org/verify/T0D96IO6SQ3B"
   },
   {
+    id: "cert-8",
+    title: "Web 3 and Rust Foundation",
+    issuer: "Lampros DAO",
+    file: "/certificates/certificate-0xc1abda32147ad64f0ea7ff6382fc837efb28146a_Web_3_and_Rust_Foundation.pdf",
+    verificationLink: "#"
+  },
+  {
+    id: "cert-9",
+    title: "Introduction to Python OpenCV",
+    issuer: "SkillUp",
+    file: "/certificates/2348149_Introduction_to_Python_OpenCV_3579560.pdf",
+    verificationLink: "#"
+  },
+  {
+    id: "cert-10",
+    title: "Programming with Python 3.X",
+    issuer: "SkillUp",
+    file: "/certificates/2348149_Programming_with_Python_3.X_3689703.pdf",
+    verificationLink: "#"
+  },
+  {
     id: "cert-5",
     title: "Data Analysis",
     issuer: "GreatLearning",
     file: "/certificates/GreatLearning Data Analysis.pdf",
-    verificationLink: "#"
-  },
-  {
-    id: "cert-6",
-    title: "Python and Machine Learning",
-    issuer: "GreatLearning",
-    file: "/certificates/Greatlearning Python and Machine Learning.pdf",
     verificationLink: "#"
   },
   {
@@ -249,60 +303,11 @@ export const CERTIFICATES_DATA = [
     verificationLink: "#"
   },
   {
-    id: "cert-8",
-    title: "Web 3 and Rust Foundation",
-    issuer: "Unknown",
-    file: "/certificates/certificate-0xc1abda32147ad64f0ea7ff6382fc837efb28146a_Web_3_and_Rust_Foundation.pdf",
-    verificationLink: "#"
-  },
-  {
-    id: "cert-9",
-    title: "Introduction to Python OpenCV",
-    issuer: "Unknown",
-    file: "/certificates/2348149_Introduction_to_Python_OpenCV_3579560.pdf",
-    verificationLink: "#"
-  },
-  {
-    id: "cert-10",
-    title: "Programming with Python 3.X",
-    issuer: "Unknown",
-    file: "/certificates/2348149_Programming_with_Python_3.X_3689703.pdf",
-    verificationLink: "#"
-  },
-  {
-    id: "cert-11",
-    title: "Introduction to Artificial Intelligence",
-    issuer: "Unknown",
-    file: "/certificates/2348201_Introduction_to_Artificial_Intelligence_6848467.pdf",
-    verificationLink: "#"
-  },
-  {
-    id: "cert-12",
-    title: "Introduction to Image Generation",
-    issuer: "Unknown",
-    file: "/certificates/2348201_Introduction_to_Image_Generation_6873508.pdf",
-    verificationLink: "#"
-  },
-  {
-    id: "cert-13",
-    title: "Introduction to Responsible AI",
-    issuer: "Unknown",
-    file: "/certificates/2348201_Introduction_to_Responsible_AI_6873533.pdf",
-    verificationLink: "#"
-  },
-  {
     id: "cert-14",
     title: "LJ Innovation 26 Certificate",
     issuer: "LJ Innovation",
     file: "/certificates/lj innovation 26 certificate.pdf",
     verificationLink: "#"
-  },
-  {
-    id: "cert-15",
-    title: "Clapingo Spoken English Certificate",
-    issuer: "Clapingo",
-    file: "/certificates/13C83694_certificate.pdf",
-    verificationLink: "https://clapingo.com/verify-certificate/13C83694"
   }
 ];
 
@@ -315,6 +320,12 @@ export const DESKTOP_ICONS = [
   { id: "education", title: "Education", iconClass: "bi-mortarboard-fill", color: "#4a90d9" },
   { id: "contact", title: "Contact", iconClass: "bi-envelope-fill", color: "#d4a843" },
   { id: "resume", title: "Resume.txt", iconClass: "bi-file-earmark-text-fill", color: "#5a9fd4" },
+  { id: "minesweeper", title: "Minesweeper", iconClass: "bi-grid-3x3-gap-fill", color: "#e74c3c" },
+  { id: "paint", title: "Paint", iconClass: "bi-palette-fill", color: "#9b59b6" },
+  { id: "mediaplayer", title: "Media Player", iconClass: "bi-play-btn-fill", color: "#3498db" },
+  { id: "calculator", title: "Calculator", iconClass: "bi-calculator-fill", color: "#27ae60" },
+  { id: "taskmanager", title: "Task Manager", iconClass: "bi-activity", color: "#e67e22" },
+  { id: "settings", title: "Display Properties", iconClass: "bi-sliders2", color: "#f39c12" },
   { id: "github", title: "GitHub", iconClass: "bi-github", color: "#ffffff", type: "link", url: "https://github.com/create2learn7238" },
   { id: "linkedin", title: "LinkedIn", iconClass: "bi-linkedin", color: "#0a66c2", type: "link", url: "https://www.linkedin.com/in/dixit-patel-7718993a1" },
   { id: "recycle", title: "Recycle Bin", iconClass: "bi-trash3-fill", color: "#888888", type: "system" }
@@ -329,4 +340,11 @@ export const APP_CONFIGS = {
   education: { title: "Education", width: 500, height: 380, iconClass: "bi-mortarboard-fill" },
   contact: { title: "Contact", width: 480, height: 400, iconClass: "bi-envelope-fill" },
   resume: { title: "Resume.txt - Notepad", width: 650, height: 500, iconClass: "bi-file-earmark-text-fill" },
+  minesweeper: { title: "Minesweeper", width: 340, height: 430, iconClass: "bi-grid-3x3-gap-fill" },
+  paint: { title: "untitled - Paint", width: 680, height: 480, iconClass: "bi-palette-fill" },
+  mediaplayer: { title: "Windows Media Player", width: 520, height: 400, iconClass: "bi-play-btn-fill" },
+  calculator: { title: "Calculator", width: 320, height: 360, iconClass: "bi-calculator-fill" },
+  taskmanager: { title: "Windows Task Manager", width: 500, height: 440, iconClass: "bi-activity" },
+  settings: { title: "Display Properties", width: 500, height: 440, iconClass: "bi-sliders2" },
 };
+

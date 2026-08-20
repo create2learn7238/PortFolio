@@ -201,6 +201,81 @@ export function CertificateIcon({ size = 48 }) {
   );
 }
 
+export function MinesweeperIcon({ size = 48 }) {
+  return (
+    <svg viewBox="0 0 48 48" width={size} height={size}>
+      <rect x="4" y="4" width="40" height="40" rx="3" fill="#c0c0c0" stroke="#808080" strokeWidth="1.5"/>
+      <circle cx="24" cy="24" r="10" fill="#111111"/>
+      <line x1="24" y1="8" x2="24" y2="40" stroke="#111111" strokeWidth="2.5"/>
+      <line x1="8" y1="24" x2="40" y2="24" stroke="#111111" strokeWidth="2.5"/>
+      <line x1="12" y1="12" x2="36" y2="36" stroke="#111111" strokeWidth="2.5"/>
+      <line x1="36" y1="12" x2="12" y2="36" stroke="#111111" strokeWidth="2.5"/>
+      <circle cx="21" cy="21" r="3" fill="white"/>
+    </svg>
+  );
+}
+
+export function PaintIcon({ size = 48 }) {
+  return (
+    <svg viewBox="0 0 48 48" width={size} height={size}>
+      <path d="M24 6 C12 6 4 14 4 24 C4 34 12 42 24 42 C27 42 29 40 29 37 C29 35.5 28 34.5 28 33 C28 31.5 29 30.5 31.5 30.5 L34 30.5 C39.5 30.5 44 26 44 20.5 C44 12.5 35 6 24 6 Z" fill="#fffdf0" stroke="#808080" strokeWidth="1.5"/>
+      <circle cx="14" cy="18" r="3.5" fill="#e74c3c"/>
+      <circle cx="23" cy="14" r="3.5" fill="#f1c40f"/>
+      <circle cx="32" cy="18" r="3.5" fill="#2ecc71"/>
+      <circle cx="14" cy="28" r="3.5" fill="#3498db"/>
+      <circle cx="34" cy="26" r="3.5" fill="#9b59b6"/>
+    </svg>
+  );
+}
+
+export function MediaPlayerIcon({ size = 48 }) {
+  return (
+    <svg viewBox="0 0 48 48" width={size} height={size}>
+      <circle cx="24" cy="24" r="20" fill="#0054e3" stroke="#0038a8" strokeWidth="1.5"/>
+      <circle cx="24" cy="24" r="14" fill="#112244"/>
+      <polygon points="20,15 32,24 20,33" fill="#ffb900"/>
+    </svg>
+  );
+}
+
+export function DisplayPropertiesIcon({ size = 48 }) {
+  return (
+    <svg viewBox="0 0 48 48" width={size} height={size}>
+      <rect x="6" y="8" width="36" height="26" rx="2" fill="#3a7ec8" stroke="#0038a8" strokeWidth="1.5"/>
+      <rect x="9" y="11" width="30" height="20" fill="#f0c040"/>
+      <rect x="18" y="34" width="12" height="4" fill="#a0a8b0"/>
+      <rect x="14" y="38" width="20" height="4" rx="1" fill="#708090"/>
+    </svg>
+  );
+}
+
+export function CalculatorIcon({ size = 48 }) {
+  return (
+    <svg viewBox="0 0 48 48" width={size} height={size}>
+      <rect x="8" y="4" width="32" height="40" rx="3" fill="#27ae60" stroke="#1e8449" strokeWidth="1.5"/>
+      <rect x="12" y="8" width="24" height="8" rx="1" fill="#d4efdf" stroke="#17202a" strokeWidth="1"/>
+      <rect x="12" y="20" width="6" height="5" rx="0.5" fill="#ffffff"/>
+      <rect x="21" y="20" width="6" height="5" rx="0.5" fill="#ffffff"/>
+      <rect x="30" y="20" width="6" height="5" rx="0.5" fill="#f39c12"/>
+      <rect x="12" y="27" width="6" height="5" rx="0.5" fill="#ffffff"/>
+      <rect x="21" y="27" width="6" height="5" rx="0.5" fill="#ffffff"/>
+      <rect x="30" y="27" width="6" height="5" rx="0.5" fill="#f39c12"/>
+      <rect x="12" y="34" width="6" height="5" rx="0.5" fill="#ffffff"/>
+      <rect x="21" y="34" width="6" height="5" rx="0.5" fill="#ffffff"/>
+      <rect x="30" y="34" width="6" height="5" rx="0.5" fill="#e74c3c"/>
+    </svg>
+  );
+}
+
+export function TaskManagerIcon({ size = 48 }) {
+  return (
+    <svg viewBox="0 0 48 48" width={size} height={size}>
+      <rect x="6" y="6" width="36" height="36" rx="2" fill="#111" stroke="#e67e22" strokeWidth="1.5"/>
+      <path d="M10 24 L18 24 L21 14 L26 34 L30 20 L33 24 L38 24" fill="none" stroke="#2ecc71" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+  );
+}
+
 // Map icon IDs to components
 const ICON_MAP = {
   about: MyComputerIcon,
@@ -210,6 +285,12 @@ const ICON_MAP = {
   education: GraduationCapIcon,
   contact: EnvelopeIcon,
   resume: NotepadIcon,
+  minesweeper: MinesweeperIcon,
+  paint: PaintIcon,
+  mediaplayer: MediaPlayerIcon,
+  calculator: CalculatorIcon,
+  taskmanager: TaskManagerIcon,
+  settings: DisplayPropertiesIcon,
   github: GitHubIcon,
   linkedin: LinkedInIcon,
   recycle: RecycleBinIcon,
@@ -218,7 +299,7 @@ const ICON_MAP = {
 export function getDesktopIcon(id, size = 48) {
   const IconComponent = ICON_MAP[id];
   if (IconComponent) return <IconComponent size={size} />;
-  return <i className={`bi bi-app text-[${size}px]`}></i>;
+  return <i className="bi bi-app" style={{ fontSize: `${size}px` }}></i>;
 }
 
 // Small icon for titlebars/taskbar (16px)

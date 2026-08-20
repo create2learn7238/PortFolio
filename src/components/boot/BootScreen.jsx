@@ -9,29 +9,34 @@ export default function BootScreen() {
     const timer = setInterval(() => {
       setProgress((old) => {
         if (old >= 100) {
-          clearInterval(timer);
-          setTimeout(bootOS, 500); // Wait a tiny bit before switching
           return 100;
         }
         return old + Math.random() * 15;
       });
-    }, 300);
+    }, 250);
 
     return () => clearInterval(timer);
-  }, [bootOS]);
+  }, []);
+
+  useEffect(() => {
+    if (progress >= 100) {
+      const timeoutId = setTimeout(bootOS, 400);
+      return () => clearTimeout(timeoutId);
+    }
+  }, [progress, bootOS]);
 
   return (
-    <div className="w-full h-screen bg-black flex flex-col items-center justify-center font-tahoma text-white">
+    <div className="w-full h-screen bg-black flex flex-col items-center justify-center font-tahoma text-white p-4 select-none">
       {/* XP Logo Placeholder */}
-      <div className="mb-12 flex flex-col items-center">
-        <h1 className="text-6xl font-bold italic tracking-tighter">
+      <div className="mb-8 sm:mb-12 flex flex-col items-center">
+        <h1 className="text-4xl sm:text-6xl font-bold italic tracking-tighter">
           Windows<span className="text-orange-alert font-normal">XP</span>
         </h1>
-        <p className="text-lg mt-2 font-light">Professional</p>
+        <p className="text-base sm:text-lg mt-2 font-light">Professional</p>
       </div>
 
       {/* Loading Bar */}
-      <div className="w-48 h-4 border-2 border-gray-600 rounded-sm p-[2px] flex items-center bg-black overflow-hidden relative">
+      <div className="w-44 sm:w-48 h-4 border-2 border-gray-600 rounded-sm p-[2px] flex items-center bg-black overflow-hidden relative">
         <div 
           className="h-full bg-gradient-to-b from-blue-400 via-blue-600 to-blue-800 transition-all duration-300"
           style={{ width: `${Math.min(progress, 100)}%` }}
@@ -45,7 +50,7 @@ export default function BootScreen() {
         </div>
       </div>
       
-      <div className="mt-24 text-gray-500 text-sm">
+      <div className="mt-16 sm:mt-24 text-gray-500 text-xs sm:text-sm text-center">
         Copyright © Microsoft Corporation
       </div>
     </div>

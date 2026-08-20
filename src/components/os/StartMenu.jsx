@@ -1,12 +1,14 @@
 import { useStore } from '../../store/useStore';
 import { APP_CONFIGS, PERSONAL_INFO } from '../../data/portfolioData';
+import { playClickSound, playWindowSound, playShutdownSound } from '../../utils/audio';
 
 export default function StartMenu() {
-  const { isStartMenuOpen, closeStartMenu, openWindow } = useStore();
+  const { isStartMenuOpen, closeStartMenu, openWindow, logoutUser, turnOffOS } = useStore();
 
   if (!isStartMenuOpen) return null;
 
   const handleOpenApp = (id) => {
+    playWindowSound();
     const config = APP_CONFIGS[id];
     if (config) {
       openWindow({
@@ -20,8 +22,19 @@ export default function StartMenu() {
   };
 
   const handleOpenLink = (url) => {
+    playClickSound();
     window.open(url, '_blank');
     closeStartMenu();
+  };
+
+  const handleLogOff = () => {
+    playShutdownSound();
+    logoutUser();
+  };
+
+  const handleTurnOff = () => {
+    playShutdownSound();
+    turnOffOS();
   };
 
   return (
@@ -29,23 +42,28 @@ export default function StartMenu() {
       {/* Invisible backdrop */}
       <div className="absolute inset-0 z-40" onClick={closeStartMenu}></div>
       
-      <div className="absolute bottom-[30px] left-0 w-[380px] bg-white border-2 border-[#0054e3] rounded-t-lg shadow-2xl z-50 flex flex-col overflow-hidden" style={{ fontFamily: 'Tahoma, sans-serif' }}>
+      <div className="absolute bottom-[36px] sm:bottom-[30px] left-1.5 sm:left-0 w-[calc(100vw-12px)] max-w-[380px] sm:w-[380px] bg-white border-2 border-[#0054e3] rounded-t-lg shadow-2xl z-50 flex flex-col overflow-hidden max-h-[calc(100vh-50px)]" style={{ fontFamily: 'Tahoma, sans-serif' }}>
         
         {/* ═══ TOP HEADER — User info ═══ */}
-        <div className="p-[10px] flex items-center rounded-t-md" style={{ background: 'linear-gradient(180deg, #1d68d1 0%, #3385e8 100%)' }}>
-          <div className="w-[48px] h-[48px] rounded-[4px] border-2 border-white/50 bg-[#e68a3c] flex items-center justify-center text-white text-[22px] font-bold shadow-md flex-shrink-0">
+        <div className="p-[8px] sm:p-[10px] flex items-center rounded-t-md flex-shrink-0" style={{ background: 'linear-gradient(180deg, #1d68d1 0%, #3385e8 100%)' }}>
+          <div className="w-[42px] h-[42px] sm:w-[48px] sm:h-[48px] rounded-[4px] border-2 border-white/50 bg-[#e68a3c] flex items-center justify-center text-white text-[18px] sm:text-[22px] font-bold shadow-md flex-shrink-0">
             D
           </div>
-          <span className="ml-3 text-white font-bold text-[14px]" style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.3)' }}>Dixit Patel</span>
+          <span className="ml-2.5 sm:ml-3 text-white font-bold text-[13px] sm:text-[14px]" style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.3)' }}>Dixit Patel</span>
         </div>
 
         {/* ═══ MAIN CONTENT — Two Columns ═══ */}
-        <div className="flex" style={{ height: '340px' }}>
+        <div className="flex flex-1 overflow-y-auto min-h-0" style={{ maxHeight: '340px' }}>
           
           {/* Left Column — Programs */}
-          <div className="flex-1 bg-white flex flex-col py-1">
+          <div className="flex-1 bg-white flex flex-col py-1 overflow-y-auto">
             <MenuItem iconClass="bi-folder-fill" iconColor="#f0c040" title="My Projects" sub="Portfolio Projects" onClick={() => handleOpenApp('projects')} />
             <MenuItem iconClass="bi-pc-display" iconColor="#1a7dc4" title="My Computer" sub="About Me" onClick={() => handleOpenApp('about')} />
+            <MenuItem iconClass="bi-calculator-fill" iconColor="#27ae60" title="Calculator" sub="Math Utilities" onClick={() => handleOpenApp('calculator')} />
+            <MenuItem iconClass="bi-activity" iconColor="#e67e22" title="Task Manager" sub="Process Manager" onClick={() => handleOpenApp('taskmanager')} />
+            <MenuItem iconClass="bi-grid-3x3-gap-fill" iconColor="#e74c3c" title="Minesweeper" sub="Classic Game" onClick={() => handleOpenApp('minesweeper')} />
+            <MenuItem iconClass="bi-palette-fill" iconColor="#9b59b6" title="Paint" sub="Drawing Canvas" onClick={() => handleOpenApp('paint')} />
+            <MenuItem iconClass="bi-play-btn-fill" iconColor="#3498db" title="Media Player" sub="Audio Beats" onClick={() => handleOpenApp('mediaplayer')} />
             <div className="h-px bg-gray-200 my-[3px] mx-3"></div>
             <MenuItem iconClass="bi-gear-fill" iconColor="#6c757d" title="Skills" sub="Technical abilities" onClick={() => handleOpenApp('skills')} />
             <MenuItem iconClass="bi-mortarboard-fill" iconColor="#4a90d9" title="Education" sub="Academic info" onClick={() => handleOpenApp('education')} />
@@ -60,13 +78,13 @@ export default function StartMenu() {
           </div>
 
           {/* Right Column — System links */}
-          <div className="w-[155px] bg-[#d3e5fa] border-l border-[#8eb8e7] flex flex-col py-1 text-[#00145c]">
+          <div className="w-[130px] sm:w-[155px] bg-[#d3e5fa] border-l border-[#8eb8e7] flex flex-col py-1 text-[#00145c] overflow-y-auto flex-shrink-0">
             <RightMenuItem iconClass="bi-folder-fill" title="My Projects" bold onClick={() => handleOpenApp('projects')} />
-            <RightMenuItem iconClass="bi-image-fill" title="My Pictures" bold />
+            <RightMenuItem iconClass="bi-award-fill" title="Certificates" bold onClick={() => handleOpenApp('certificates')} />
             <RightMenuItem iconClass="bi-pc-display" title="My Computer" bold onClick={() => handleOpenApp('about')} />
             <div className="h-px bg-[#8eb8e7] my-[3px] mx-2"></div>
-            <RightMenuItem iconClass="bi-sliders" title="Control Panel" onClick={() => handleOpenApp('skills')} />
-            <RightMenuItem iconClass="bi-printer-fill" title="Printers" />
+            <RightMenuItem iconClass="bi-sliders2" title="Control Panel" onClick={() => handleOpenApp('settings')} />
+            <RightMenuItem iconClass="bi-play-btn-fill" title="Media Player" onClick={() => handleOpenApp('mediaplayer')} />
             <div className="h-px bg-[#8eb8e7] my-[3px] mx-2"></div>
             <RightMenuItem iconClass="bi-github" title="GitHub" onClick={() => handleOpenLink(PERSONAL_INFO.github)} />
             <RightMenuItem iconClass="bi-linkedin" title="LinkedIn" onClick={() => handleOpenLink(PERSONAL_INFO.linkedin)} />
@@ -77,13 +95,13 @@ export default function StartMenu() {
         </div>
 
         {/* ═══ BOTTOM FOOTER ═══ */}
-        <div className="px-3 py-[6px] flex justify-end items-center border-t border-[#003dbb]" style={{ background: 'linear-gradient(180deg, #2264d1 0%, #3587f0 100%)' }}>
-          <button className="flex items-center text-white text-[11px] hover:brightness-110 mx-1 cursor-pointer border-0 bg-transparent" onClick={closeStartMenu}>
+        <div className="px-3 py-[6px] flex justify-end items-center border-t border-[#003dbb] flex-shrink-0" style={{ background: 'linear-gradient(180deg, #2264d1 0%, #3587f0 100%)' }}>
+          <button className="flex items-center text-white text-[11px] hover:brightness-110 mx-1 cursor-pointer border-0 bg-transparent active:scale-95 transition-transform" onClick={handleLogOff}>
             <i className="bi bi-box-arrow-right mr-[5px] text-[13px]"></i>
             Log Off
           </button>
           <span className="text-white/30 mx-1">|</span>
-          <button className="flex items-center text-white text-[11px] hover:brightness-110 mx-1 cursor-pointer border-0 bg-transparent" onClick={closeStartMenu}>
+          <button className="flex items-center text-white text-[11px] hover:brightness-110 mx-1 cursor-pointer border-0 bg-transparent active:scale-95 transition-transform" onClick={handleTurnOff}>
             <i className="bi bi-power mr-[5px] text-[13px] text-red-300"></i>
             Turn Off
           </button>

@@ -5,9 +5,10 @@ import StartMenu from './components/os/StartMenu';
 import WindowManager from './components/os/WindowManager';
 import BootScreen from './components/boot/BootScreen';
 import LoginScreen from './components/boot/LoginScreen';
+import RoverAssistant from './components/os/RoverAssistant';
 
 function App() {
-  const { isBooted, isLoggedIn } = useStore();
+  const { isBooted, isLoggedIn, currentWallpaper } = useStore();
 
   if (!isBooted) {
     return <BootScreen />;
@@ -17,15 +18,20 @@ function App() {
     return <LoginScreen />;
   }
 
+  const wallpaperStyle = currentWallpaper.url.startsWith('http') || currentWallpaper.url.startsWith('/')
+    ? { background: `url('${currentWallpaper.url}') center/cover no-repeat`, backgroundColor: currentWallpaper.bgColor }
+    : { backgroundColor: currentWallpaper.bgColor };
+
   return (
-    <div className="w-full h-screen overflow-hidden flex flex-col">
+    <div className="w-full h-screen overflow-hidden flex flex-col font-tahoma select-none">
       <div 
-        className="relative flex-1 w-full overflow-hidden"
-        style={{ background: "url('/assets/bliss.jpg') center/cover no-repeat", backgroundColor: '#3a6ea5' }}
+        className="relative flex-1 w-full overflow-hidden transition-all duration-300"
+        style={wallpaperStyle}
       >
         <Desktop />
         <WindowManager />
         <StartMenu />
+        <RoverAssistant />
       </div>
       
       {/* Bottom Taskbar */}
