@@ -205,14 +205,14 @@ export const CERTIFICATES_DATA = [
     title: "Introduction to Image Generation",
     issuer: "Google",
     file: "/certificates/2348201_Introduction_to_Image_Generation_6873508.pdf",
-    verificationLink: "#"
+    verificationLink: "https://simplilearn.com/certificates/verify/6873508"
   },
   {
     id: "cert-13",
     title: "Introduction to Responsible AI",
     issuer: "Google",
     file: "/certificates/2348201_Introduction_to_Responsible_AI_6873533.pdf",
-    verificationLink: "#"
+    verificationLink: "https://simplilearn.com/certificates/verify/6873533"
   },
 
   // ═══ AI / MACHINE LEARNING CERTIFICATES ═══
@@ -221,7 +221,7 @@ export const CERTIFICATES_DATA = [
     title: "Introduction to Artificial Intelligence",
     issuer: "Simplilearn",
     file: "/certificates/2348201_Introduction_to_Artificial_Intelligence_6848467.pdf",
-    verificationLink: "#"
+    verificationLink: "https://simplilearn.com/certificates/verify/6848467"
   },
   {
     id: "cert-15",
@@ -242,7 +242,7 @@ export const CERTIFICATES_DATA = [
     title: "Python and Machine Learning",
     issuer: "GreatLearning",
     file: "/certificates/Greatlearning Python and Machine Learning.pdf",
-    verificationLink: "#"
+    verificationLink: "https://verify.mygreatlearning.com/HGNEELOM"
   },
 
   // ═══ ALL OTHER CERTIFICATES ═══
@@ -272,28 +272,28 @@ export const CERTIFICATES_DATA = [
     title: "Web 3 and Rust Foundation",
     issuer: "Lampros DAO",
     file: "/certificates/certificate-0xc1abda32147ad64f0ea7ff6382fc837efb28146a_Web_3_and_Rust_Foundation.pdf",
-    verificationLink: "#"
+    verificationLink: "https://polygonscan.com/address/0xc1abda32147ad64f0ea7ff6382fc837efb28146a"
   },
   {
     id: "cert-9",
     title: "Introduction to Python OpenCV",
     issuer: "SkillUp",
     file: "/certificates/2348149_Introduction_to_Python_OpenCV_3579560.pdf",
-    verificationLink: "#"
+    verificationLink: "https://simplilearn.com/certificates/verify/3579560"
   },
   {
     id: "cert-10",
     title: "Programming with Python 3.X",
     issuer: "SkillUp",
     file: "/certificates/2348149_Programming_with_Python_3.X_3689703.pdf",
-    verificationLink: "#"
+    verificationLink: "https://simplilearn.com/certificates/verify/3689703"
   },
   {
     id: "cert-5",
     title: "Data Analysis",
     issuer: "GreatLearning",
     file: "/certificates/GreatLearning Data Analysis.pdf",
-    verificationLink: "#"
+    verificationLink: "https://verify.mygreatlearning.com/MBSJJXGB"
   },
   {
     id: "cert-7",
