@@ -62,11 +62,11 @@ export const PROJECTS_DATA = [
     id: "proj-1",
     title: "RankRadar-ML",
     date: "2025",
-    description: "Machine learning powered rank prediction tool based on academic datasets.",
+    description: "Machine learning powered academic rank prediction system using Scikit-Learn regression models and a FastAPI backend.",
     features: [
-      "ML models using Scikit-Learn",
-      "FastAPI backend API",
-      "React 19 & Vite 8 frontend"
+      "Predictive ML models using Scikit-Learn",
+      "High-speed FastAPI backend API",
+      "Responsive React 19 & Vite 8 frontend"
     ],
     technologies: ["Python", "FastAPI", "Scikit-Learn", "React"],
     github: "https://github.com/create2learn7238/RankRadar-ML",
@@ -76,11 +76,11 @@ export const PROJECTS_DATA = [
     id: "proj-2",
     title: "IntervAi v2.0",
     date: "2025",
-    description: "AI-powered mock interview platform utilizing Google Gemini AI.",
+    description: "AI-powered mock interview platform powered by Google Gemini AI, offering real-time feedback and MERN stack architecture.",
     features: [
-      "Google Gemini AI integration",
-      "RESTful API backend",
-      "MERN Stack architecture"
+      "Google Gemini AI smart feedback engine",
+      "RESTful API backend microservices",
+      "Full MERN stack user architecture"
     ],
     technologies: ["MongoDB", "Express", "React", "Node.js"],
     github: "https://github.com/create2learn7238/IntervAi-v2.0",
@@ -90,11 +90,11 @@ export const PROJECTS_DATA = [
     id: "proj-3",
     title: "DeepHire",
     date: "2025",
-    description: "Comprehensive AI hiring portal streamlining the recruitment process.",
+    description: "Comprehensive AI hiring & recruitment portal built with Django backend, PostgreSQL database, and React frontend.",
     features: [
-      "Django backend services",
-      "PostgreSQL database",
-      "React frontend interface"
+      "Robust Django backend services",
+      "Relational PostgreSQL database architecture",
+      "Interactive candidate tracking interface"
     ],
     technologies: ["Python", "Django", "PostgreSQL", "React"],
     github: "https://github.com/create2learn7238/DeepHire.Py.Project.Sem4",
@@ -104,11 +104,11 @@ export const PROJECTS_DATA = [
     id: "proj-4",
     title: "LifeLine",
     date: "2024",
-    description: "Multi-user role-based hospital management system.",
+    description: "Multi-user role-based hospital management application featuring OPD queue tracking and Streamlit dashboard.",
     features: [
       "Role-based access (Admin, Patient, Doctor)",
-      "OPD queue & bed allocation",
-      "Medical history tracking"
+      "Automated OPD queue & bed allocation",
+      "EHR medical history tracking"
     ],
     technologies: ["Python", "Streamlit"],
     github: "https://github.com/create2learn7238/Lifeline.Py.Project.Sem3",
@@ -118,11 +118,11 @@ export const PROJECTS_DATA = [
     id: "proj-5",
     title: "BookHeaven (Elib)",
     date: "2024",
-    description: "Full-stack e-library platform with OTP registration.",
+    description: "Full-stack digital library platform supporting secure OTP authentication and instant QR payment simulations.",
     features: [
-      "Secure OTP authentication",
-      "Dummy card/QR payment simulation",
-      "Admin dashboard with stats"
+      "Secure OTP email authentication",
+      "Interactive card & QR payment simulation",
+      "Admin analytics dashboard"
     ],
     technologies: ["Node.js", "Express", "PostgreSQL", "HTML/CSS"],
     github: "https://github.com/create2learn7238/Elib.Fsd.Project.Sem3",
@@ -132,11 +132,11 @@ export const PROJECTS_DATA = [
     id: "proj-6",
     title: "TransitOps",
     date: "2026",
-    description: "Responsive fleet operations platform with atomic state transactions.",
+    description: "Responsive fleet operations dashboard built for Odoo Hackathon 2026, featuring transactional state management.",
     features: [
-      "Role-based workspaces",
-      "Simulated command map",
-      "Transactional state layer"
+      "Multi-role logistics workspaces",
+      "Interactive command & dispatch map",
+      "Atomic transactional state layer"
     ],
     technologies: ["React", "Vite", "Tailwind CSS"],
     github: "https://github.com/create2learn7238/TransitOps-Odoo-Hackathon-2026",
@@ -146,11 +146,11 @@ export const PROJECTS_DATA = [
     id: "proj-7",
     title: "VendorBridge ERP",
     date: "2026",
-    description: "Procurement & Vendor Management ERP to digitize supply chain operations.",
+    description: "Procurement & Vendor Management ERP built for Odoo x KSV Hackathon 2026 to automate purchase orders and supply chains.",
     features: [
-      "RFQ & quotation management",
-      "Automated Purchase Orders",
-      "Invoice PDF generation"
+      "RFQ & vendor quotation management",
+      "Automated Purchase Orders & inventory",
+      "Instant PDF invoice generation"
     ],
     technologies: ["Node.js", "Express", "PostgreSQL", "React"],
     github: "https://github.com/create2learn7238/Odoo-x-KSV-hackthon-2026-virtual",
@@ -160,11 +160,11 @@ export const PROJECTS_DATA = [
     id: "proj-8",
     title: "ChainVerse",
     date: "2026",
-    description: "Interactive Web3 educational platform and simulator.",
+    description: "Interactive Web3 educational simulator built for Web3 & Rust Foundation, featuring live crypto market tracking.",
     features: [
-      "Live market data (CoinGecko)",
-      "Hands-on mining simulator",
-      "No backend dependencies"
+      "Live crypto price feeds (CoinGecko API)",
+      "Interactive blockchain mining simulator",
+      "Pure client-side zero-dependency build"
     ],
     technologies: ["HTML", "CSS", "JavaScript", "Web3 APIs"],
     github: "https://github.com/create2learn7238/W3b-and-Rust-14-6-26",
@@ -174,10 +174,11 @@ export const PROJECTS_DATA = [
     id: "proj-9",
     title: "Sem4 FSD Project",
     date: "2026",
-    description: "Full-stack development private project.",
+    description: "Full-stack MERN enterprise web application built for Semester 4 coursework with MongoDB and Express backend.",
     features: [
-      "Full-stack architecture",
-      "Private repository"
+      "MERN full-stack web architecture",
+      "REST API & MongoDB database layer",
+      "Production deployment on Render"
     ],
     technologies: ["Node.js", "Express", "React", "MongoDB"],
     github: "",
@@ -187,10 +188,11 @@ export const PROJECTS_DATA = [
     id: "proj-10",
     title: "Sem4 Python Project",
     date: "2026",
-    description: "Python backend private project.",
+    description: "High-performance Python & Django REST API platform built for Semester 4 coursework with PostgreSQL data layer.",
     features: [
-      "Python backend services",
-      "Private repository"
+      "Python Django REST framework backend",
+      "Relational PostgreSQL data model",
+      "Production deployment on Render"
     ],
     technologies: ["Python", "Django", "PostgreSQL"],
     github: "",
