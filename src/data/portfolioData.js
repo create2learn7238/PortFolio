@@ -252,7 +252,7 @@ export const CERTIFICATES_DATA = [
     id: "cert-8",
     title: "Web 3 and Rust Foundation",
     issuer: "Unknown",
-    file: "/certificates/certificate-0xc1abda32147ad64f0ea7ff6382fc837efb28146a Web # and Rust Foundation .pdf",
+    file: "/certificates/certificate-0xc1abda32147ad64f0ea7ff6382fc837efb28146a_Web_3_and_Rust_Foundation.pdf",
     verificationLink: "#"
   },
   {
